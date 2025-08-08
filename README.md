@@ -21,8 +21,12 @@ This repository uses the bdk-ffi repository as a git submodule. Here are useful 
 
 ```sh
 source .localpythonenv/bin/activate
+
 bash scripts/generate-macos-arm64.sh
-python3 setup.py bdist_wheel
+
+python3 -m build --wheel --outdir dist --verbose 
+
 pip3 install ./dist/bdkpython-<yourversion>.whl --force-reinstall
+
 python3 -m unittest --verbose
 ```
